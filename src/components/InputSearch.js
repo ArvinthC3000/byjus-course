@@ -5,6 +5,11 @@ import DataComponent from "./DataComponent"
 class InputSearch extends Component {
 
     state = {
+        coursesButton: false,
+        providerButton: false,
+        subjectButton: false,
+        instituteButton: false,
+        data: [],
         nextSessionDate: [],
         childSubject: [],
         provider: []
@@ -18,6 +23,7 @@ class InputSearch extends Component {
     async componentDidMount(){
         const raw_data = await fetch('https://nut-case.s3.amazonaws.com/coursessc.json') 
         const data = await raw_data.json()
+        this.setState({data})
         const repetitiveNextSession = data.map(item =>{
             const childSubject= item["Next Session Date"]
             return childSubject
@@ -37,14 +43,25 @@ class InputSearch extends Component {
             childSubject: [...new Set(repetitiveChildSubject)].sort(),
             provider: [...new Set(provider)].sort()
         }
-        const datum = this.initialData.data.slice(0,5)
-        datum.map(item=>console.log(item))
-        console.log(this.initialData.data.slice(0,5))
+        // const datum = this.initialData.data.slice(0,5)
+        // datum.map(item=>console.log(item))
+        // console.log(this.initialData.data.slice(0,5))
+        // const comp = this.state.data.map(item=><DataComponent />)
+    }
+
+    setFunction = async (e) => {
+        this.setState({
+            coursesButton: false,
+            providerButton: false,
+            subjectButton: false,
+            instituteButton: false
+        })
+        // console.log([e.target.name])
+        this.setState({ [e.target.name]: true })
+        console.log(this.state)
     }
     
     handleChange = (e) =>{
-        
-        
         
         if(e.target.name === "nextSessionDate"){
             ReactDOM.findDOMNode(this.refs.childSubject).value = ""
@@ -96,8 +113,15 @@ class InputSearch extends Component {
                 </form>
                 <div className="resultContainer__main">
                     <div className="resultComponent">
-                        <DataComponent />
-                        {this.initialData.data.slice(0,5).map(item=><DataComponent key={item["Course Id"]} data={item} />)}
+                        <button name="coursesButton" onClick={this.setFunction}>See all Courses</button>
+                        <button name="providerButton" onClick={this.setFunction}>Providers</button>
+                        <button name="subjectButton" onClick={this.setFunction}>Subject</button>
+                        <button name="instituteButton" onClick={this.setFunction}>Institute</button>
+                        {this.state.coursesButton===true && this.state.data.map(item=><DataComponent key={this.state.data["Course Id"]} coursesButton={true} data={item} />)}
+                        {this.state.providerButton===true && this.initialData.provider.map(item=><DataComponent key={this.state.data["Course Id"]} providerButton={true} data={item} />)}
+                        {this.state.subjectButton===true && this.state.data.map(item=><DataComponent key={this.state.data["Course Id"]} subjectButton={true} data={item} />)}
+                        {this.state.instituteButton===true && this.state.data.map(item=><DataComponent key={this.state.data["Course Id"]} instituteButton={true} data={item} />)}
+                        
                     </div>
                 </div>
             </div>
