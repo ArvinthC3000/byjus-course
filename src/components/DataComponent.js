@@ -1,10 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'reactstrap';
 
-export default function DataComponent(props) {
-    console.log(props)
-    return (
-        <div className="dataComp__child">
-            {props.data}
-        </div>
-    )
-}
+const DataComponent = ({ data, loading }) => {
+    console.log(data)
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  return (
+    <div>
+        {data.map(datum => (
+            <div>
+            <div>
+                <h3>{datum["Course Id"]}-{datum["Course Name"]}</h3><span>{datum.Provider}</span>
+            </div>
+            <div>
+                <h5>{ datum["Universities/Institutions"] }</h5>
+                <p>Subject: { datum["Parent Subject"] }</p>
+                <p>Child Subject: { datum["Child Subject"] }</p>
+                <Button href={datum.Url} variant="primary" size="lg" disabled>
+                    Link
+                </Button>
+            </div>
+            </div>
+
+        ))}
+    </div>
+  );
+};
+
+export default DataComponent;
