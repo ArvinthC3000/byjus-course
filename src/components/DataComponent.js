@@ -5,7 +5,7 @@ export default function DataComponent(props) {
     return (
         <div>
             {props.coursesButton && <p>{props.data["Course Name"]}</p>}
-            {props.providerButton && <p>{props.dat}</p>}
+            {props.providerButton && <p>{props.data}</p>}
             {props.subjectButton && <p>{props.data["Parent Subject"]}</p>}
             {props.instituteButton && <p>{props.data["Universities/Institutions"]}</p>}
         </div>
