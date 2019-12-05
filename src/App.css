@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 5vh;
 }
 
 .App-logo {
@@ -21,6 +22,22 @@
   color: #09d3ac;
 }
 
+.dataComp__parent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dataComp__child{
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 5px;
+  flex-grow: 1;
+}
+.dataComp__child>p{
+  margin: 5px;
+}
 
 
 /*  #282c34 */
