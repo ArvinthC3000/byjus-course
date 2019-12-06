@@ -15,7 +15,7 @@ Desktop responsive.
 
 ## How to use?
 ### Use application only
-Just follow this [link](https://ipredict-inventory-module.firebaseapp.com).    
+Just follow this [link](https://byjus-search-course.herokuapp.com/).    
 It'll take you to deployed domine in which you can examine how it works.
 
 ### Run in you system
@@ -41,4 +41,4 @@ email: arvinthc97@gmail.com
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [JavaScript-ES6](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-* [Firebase](https://console.firebase.google.com/) - For deployment
+* [Heroku](https://devcenter.heroku.com/) - For deployment
