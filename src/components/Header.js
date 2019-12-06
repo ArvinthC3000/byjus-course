@@ -1,11 +1,11 @@
 import React from 'react'
-// import Image from '../img/img1.png'
+import Image from '../img/img1.png'
 
-const Header = ({length, submitHandler, searchFilter}) => {
+const Header = ({length, submitHandler, searchFilter, loading}) => {
     
-//   if (loading) {
-//     return (<img src={Image} alt="" width="50%" srcset=""/>)
-//   }
+  if (loading) {
+    return (<img src={Image} alt="" width="50%" srcset=""/>)
+  }
 
 return (
     <div className="header_component">
