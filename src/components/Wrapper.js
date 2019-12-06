@@ -10,6 +10,7 @@ const Wrapper = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPerPage] = useState(50);
     const [searchkey, setSearchkey] = useState("")
+    let length = data.length;
 
 
     // Fetch data
@@ -25,39 +26,42 @@ const Wrapper = () => {
         fetchObject();
     }, [])
 
-    // Get current posts
+    // Pagination
     const indexOfLastData = currentPage * dataPerPage;
     const indexOfFirstData = indexOfLastData - dataPerPage;
     const currentData = data.slice(indexOfFirstData, indexOfLastData);
-    const length = data.length;
+    // Change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
+    
+
+    // Handlers
     let searchFilter = async (e) => {
         setSearchkey(e.target.value)
-        console.log(searchkey)
     }
     let submitHandler = (e) => {
         e.preventDefault()
         let sortedArray = []
         data.forEach(datum => {
-            // console.log(searchkey)
             if(datum.Provider === searchkey || datum["Child Subject"] === searchkey || datum["Next Session Date"] === searchkey  ) {
-                console.log(datum.Provider)
                 sortedArray.push(datum)
             }
         })
         setData(sortedArray)
-        console.log(sortedArray)
     }
 
-    // Change page
-    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <div className="container_wrapper">
             <Header 
                length = {length}
                searchFilter={searchFilter}
-               submitHandler={submitHandler}/>
-            <DataComponent data={currentData} loading={loading} />
+               submitHandler={submitHandler}
+               loading={loading}
+            />
+            <DataComponent 
+                data={currentData} 
+                loading={loading} 
+            />
             <Pagination
                 postsPerPage={dataPerPage}
                 totalPosts={data.length}
