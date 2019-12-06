@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DataComponent from './DataComponent';
 import Pagination from './Pagination';
+import Header from './Header';
 import axios from 'axios';
 
 const Wrapper = () => {
@@ -33,11 +34,14 @@ const Wrapper = () => {
 
     return (
         <div className="container_wrapper">
+            <Header 
+                loading={loading}/>
             <DataComponent data={currentData} loading={loading} />
             <Pagination
                 postsPerPage={dataPerPage}
                 totalPosts={data.length}
                 paginate={paginate}
+                loading={loading}
             />
         </div>
     )
