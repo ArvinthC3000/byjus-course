@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  margin-top: 5vh;
 }
 
 .App-logo {
@@ -29,11 +28,22 @@
 }
 
 nav{
-  width: 90vw;
+  width: 100%;
+  position: sticky;
+  bottom: 0vh;
+  color: white;
+  background-color: #4f5155;
+  /* margin-top: -1rem; */
+}
+
+nav ul{
+  margin: 5px auto !important;
 }
 
 .pagination{
   display: flex;
+  margin:3rem auto;
+  width: 90%;
   overflow: auto;
   position: relative;
   /* margin-top:-50px; */
@@ -41,9 +51,56 @@ nav{
   /* bottom: 0%; */
 }
 
-.pagination::-webkit-scrollbar {
-  width: 10px;
+form{
+  display: flex;
+}
+
+ input{
+  width: 50%;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  padding-left: 10px;
+  /* border-bottom: 2px;
+  border-bottom: 2px; */
+}
+.header_search{
+  margin-left: 1em;
+  background-color: #24a3b4;
+  border: none;
+  border-radius: 5px;
+}
+
+.header_component{
+  text-align: left;
+  width: 80%;
+  float: left;
+}
+
+.header_title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title>span{
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.header_title p{
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
   border-radius: 1em;
+  padding: 5px;
+  color: aliceblue;
+  background-color: #4f5155;
+}
+
+/* .pagination::-webkit-scrollbar {
+  width: 5px;
+  border-radius: .5em;
 }
 
 .pagination::-webkit-scrollbar-track {
@@ -55,7 +112,7 @@ nav{
 }
 .pagination::-webkit-scrollbar-thumb:hover {
   background: #6eb1cc; 
-}
+} */
 
 .dataComp__child{
   margin: 5px;
@@ -87,7 +144,6 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem
 }
 
 /* .container_item{
