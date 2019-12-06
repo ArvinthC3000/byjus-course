@@ -32,7 +32,7 @@ const Wrapper = () => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
-        <div>
+        <div className="container_wrapper">
             <DataComponent data={currentData} loading={loading} />
             <Pagination
                 postsPerPage={dataPerPage}
