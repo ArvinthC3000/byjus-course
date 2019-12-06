@@ -3,28 +3,39 @@ import { Button } from 'reactstrap';
 
 const DataComponent = ({ data, loading }) => {
     console.log(data)
+    data.map(datum =>{
+      console.log(datum["Video(Url)"])
+    })
   if (loading) {
     return <h2>Loading...</h2>;
   }
 
   return (
-    <div>
-        {data.map(datum => (
-            <div>
-            <div>
-                <h3>{datum["Course Id"]}-{datum["Course Name"]}</h3><span>{datum.Provider}</span>
-            </div>
-            <div>
-                <h5>{ datum["Universities/Institutions"] }</h5>
-                <p>Subject: { datum["Parent Subject"] }</p>
-                <p>Child Subject: { datum["Child Subject"] }</p>
-                <Button href={datum.Url} variant="primary" size="lg" disabled>
-                    Link
-                </Button>
-            </div>
-            </div>
+    <div className="container_item">
+      <div >
+          {data.map(datum => (
+              <div className="component_wrapper">
+              <div className="component_header">
+                  <h3 className="id">{datum["Course Id"]}</h3><h3>{datum["Course Name"]}</h3><span>{datum.Provider}</span>
+              </div>
+              <div>
+                  <h5>{ datum["Universities/Institutions"] }</h5>
+                  <p>Length(in hours) : { datum["Length"] || "NA"}</p>
+                  <p>Subject: { datum["Parent Subject"] }</p>
+                  <p>Next Session: { datum["Next Session Date"] }</p>
+                  <p>Child Subject: { datum["Child Subject"] }</p>
+                  <Button className="button" type="button" href={datum.Url} variant="primary" size="lg">
+                      Link
+                  </Button>
+                  <Button className="button" type="button" href={datum["Video(Url)"]} variant="primary" size="lg">
+                      {datum["Video(Url)"]?"Video":"Video Unavailable"}
+                  </Button>
+                  
+              </div>
+              </div>
 
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
