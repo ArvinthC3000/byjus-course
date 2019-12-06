@@ -33,7 +33,6 @@ nav{
   bottom: 0vh;
   color: white;
   background-color: #4f5155;
-  /* margin-top: -1rem; */
 }
 
 nav ul{
@@ -46,9 +45,7 @@ nav ul{
   width: 90%;
   overflow: auto;
   position: relative;
-  /* margin-top:-50px; */
   clear: both;
-  /* bottom: 0%; */
 }
 
 form{
@@ -61,8 +58,6 @@ form{
   border-top: 0px;
   border-right: 0px;
   padding-left: 10px;
-  /* border-bottom: 2px;
-  border-bottom: 2px; */
 }
 .header_search{
   margin-left: 1em;
@@ -98,21 +93,9 @@ form{
   background-color: #4f5155;
 }
 
-/* .pagination::-webkit-scrollbar {
-  width: 5px;
-  border-radius: .5em;
+.pagination::-webkit-scrollbar {
+  display: none;
 }
-
-.pagination::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-
-.pagination::-webkit-scrollbar-thumb {
-  background: #86cee4; 
-}
-.pagination::-webkit-scrollbar-thumb:hover {
-  background: #6eb1cc; 
-} */
 
 .dataComp__child{
   margin: 5px;
@@ -146,18 +129,14 @@ form{
   align-items: center;
 }
 
-/* .container_item{
-  padding:5px;
-  border: 1px solid black;
-} */
-
 .component_wrapper{
   display: flex;
   flex-direction: column;
   border: 1px solid #9F9F9F;
   border-radius:2rem ;
   margin: 1em;
-  /* padding: 1em; */
+  min-width: 50vw;
+  min-height: 30vh;
 }
 
 .component_header{
@@ -168,7 +147,6 @@ form{
 }
 
 .component_header>h3{
-  /* color: aliceblue; */
   margin:1rem 2rem;
 }
 
@@ -193,4 +171,3 @@ form{
   background-color: #24a3b4;
   color: whitesmoke;
 }
-/*  #282c34 */

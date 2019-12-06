@@ -61,6 +61,7 @@ const Wrapper = () => {
             <DataComponent 
                 data={currentData} 
                 loading={loading} 
+                totalPosts={data.length}
             />
             <Pagination
                 postsPerPage={dataPerPage}

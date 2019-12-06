@@ -1,11 +1,29 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-const DataComponent = ({ data, loading }) => {
+const DataComponent = ({ data, loading, totalPosts }) => {
   
-  
+
   if (loading) {
     return <h2>Loading...</h2>;
+  } else if (totalPosts === 0 ){
+    return (
+      <div className="container_item">
+        <div >
+                <div className="component_wrapper">
+                <div className="component_header">
+                    <h3 className="id">Course Unavailable</h3>
+                </div>
+                <div>
+                    <h5>Please enter valid credential in input text box</h5>
+                    <p>or</p>
+                    <h5>Try after refreshing the page manually</h5>
+                </div>
+                </div>
+  
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -14,7 +32,7 @@ const DataComponent = ({ data, loading }) => {
           {data.map(datum => (
               <div className="component_wrapper">
               <div className="component_header">
-                  <h3 className="id">{datum["Course Id"]}</h3><h3>{datum["Course Name"]}</h3><span>{datum.Provider}</span>
+                  <h3 className="id">{datum["Course Id"]}</h3><h3>{datum["Course Name"]}</h3><span>{datum.Provider||"NA"}</span>
               </div>
               <div>
                   <h5>{ datum["Universities/Institutions"] }</h5>

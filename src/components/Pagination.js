@@ -6,8 +6,8 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, loading }) => {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
-  if (loading) {
-    return null;
+  if (loading || totalPosts === 0) {
+    return null
   }
 
   return (
