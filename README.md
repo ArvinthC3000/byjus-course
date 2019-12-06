@@ -1,4 +1,4 @@
-### Deployment URL : https://ipredict-inventory-module.firebaseapp.com
+### Deployment URL : https://byjus-search-course.herokuapp.com/
 
 # Byju's Search course
 
