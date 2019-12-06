@@ -24,11 +24,11 @@ const DataComponent = ({ data, loading }) => {
                   <p>Subject: { datum["Parent Subject"] }</p>
                   <p>Next Session: { datum["Next Session Date"] }</p>
                   <p>Child Subject: { datum["Child Subject"] }</p>
-                  <Button className="button" type="button" href={datum.Url} variant="primary" size="lg">
-                      Link
+                  <Button className="button" type="button" href={datum["Video(Url)"]} variant="primary" className={datum["Video(Url)"]?"something":null}>
+                      {datum["Video(Url)"]?"Watch Video":"Video Unavailable"}
                   </Button>
-                  <Button className="button" type="button" href={datum["Video(Url)"]} variant="primary" size="lg">
-                      {datum["Video(Url)"]?"Video":"Video Unavailable"}
+                  <Button className="button" type="button" href={datum.Url} variant="primary" size="lg">
+                      Apply
                   </Button>
                   
               </div>
