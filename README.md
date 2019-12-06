@@ -37,5 +37,6 @@ email: arvinthc97@gmail.com
 * [ReactJS](https://reactjs.org/docs/getting-started.html)
 * [JSX](https://reactjs.org/docs/introducing-jsx.html)
 * [Axios](https://www.npmjs.com/package/axios)
+* [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [JavaScript-ES6](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
