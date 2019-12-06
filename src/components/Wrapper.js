@@ -36,13 +36,15 @@ const Wrapper = () => {
 
     // Handlers
     let searchFilter = async (e) => {
-        setSearchkey(e.target.value)
+        const temp = e.target.value
+        const lotemp = temp.toLowerCase()
+        setSearchkey(lotemp)
     }
     let submitHandler = (e) => {
         e.preventDefault()
         let sortedArray = []
         data.forEach(datum => {
-            if(datum.Provider === searchkey || datum["Child Subject"] === searchkey || datum["Next Session Date"] === searchkey  ) {
+            if(datum.Provider.toLowerCase() === searchkey || datum["Child Subject"].toLowerCase() === searchkey || datum["Next Session Date"] === searchkey  ) {
                 sortedArray.push(datum)
             }
         })
