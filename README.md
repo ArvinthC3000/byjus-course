@@ -1,4 +1,4 @@
-### Deployed Link : https://ipredict-inventory-module.firebaseapp.com
+### Deployment URL : https://ipredict-inventory-module.firebaseapp.com
 
 # Byju's Search course
 
@@ -28,6 +28,7 @@ To run the application on your system clone it to your desktop and follow the in
 
 For further details please go thought README_2.mf file by clicking [here](https://github.com/ArvinthC3000/weatherapp-react/blob/master/README_2.md)
 
+
 ## Author
 ### Arvinth C    
 [LinkedIn](https://www.linkedin.com/in/arvinth-chandrasekharan-64236a79),     
@@ -40,3 +41,4 @@ email: arvinthc97@gmail.com
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [JavaScript-ES6](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+* [Firebase](https://console.firebase.google.com/) - For deployment
