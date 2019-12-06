@@ -28,6 +28,35 @@
   flex-wrap: wrap;
 }
 
+nav{
+  width: 90vw;
+}
+
+.pagination{
+  display: flex;
+  overflow: auto;
+  position: relative;
+  /* margin-top:-50px; */
+  clear: both;
+  /* bottom: 0%; */
+}
+
+.pagination::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 1em;
+}
+
+.pagination::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+.pagination::-webkit-scrollbar-thumb {
+  background: #86cee4; 
+}
+.pagination::-webkit-scrollbar-thumb:hover {
+  background: #6eb1cc; 
+}
+
 .dataComp__child{
   margin: 5px;
   border: 1px solid gray;
@@ -42,7 +71,7 @@
 #button{
   background-color: #09d3ac;
   color: white;
-  padding: 5px 15px;
+  padding: 1px 1px;
 }
 
 #button:hover{
@@ -102,5 +131,10 @@
   margin-bottom: auto;
   padding: .5em;
   border-radius: 1rem;
+}
+
+.something{
+  background-color: #24a3b4;
+  color: whitesmoke;
 }
 /*  #282c34 */
