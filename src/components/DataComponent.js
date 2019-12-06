@@ -2,10 +2,8 @@ import React from 'react';
 import { Button } from 'reactstrap';
 
 const DataComponent = ({ data, loading }) => {
-    console.log(data)
-    data.map(datum =>{
-      console.log(datum["Video(Url)"])
-    })
+  
+  
   if (loading) {
     return <h2>Loading...</h2>;
   }
