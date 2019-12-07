@@ -1,0 +1,105 @@
+[debug] [2019-12-07T14:44:39.904Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T14:44:39.912Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Arvinth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2019-12-07T14:44:39.914Z] CLI Version:   7.8.0
+[debug] [2019-12-07T14:44:39.914Z] Platform:      win32
+[debug] [2019-12-07T14:44:39.915Z] Node Version:  v10.16.3
+[debug] [2019-12-07T14:44:39.917Z] Time:          Sat Dec 07 2019 20:14:39 GMT+0530 (India Standard Time)
+[debug] [2019-12-07T14:44:39.919Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T14:44:39.919Z] 
+[debug] [2019-12-07T14:44:39.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-07T14:44:39.955Z] > authorizing via signed-in user
+[debug] [2019-12-07T14:44:39.955Z] [iam] checking project ipredict-inventory-module for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-12-07T14:44:39.961Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ipredict-inventory-module:testIamPermissions  
+
+[debug] [2019-12-07T14:44:41.449Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T14:44:41.456Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ipredict-inventory-module  
+ 
+[debug] [2019-12-07T14:44:41.838Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ipredict-inventory-module'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-12-07T14:44:41.977Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ipredict-inventory-module/versions  
+
+[debug] [2019-12-07T14:44:44.223Z] <<< HTTP RESPONSE 200
+[info] i  hosting[ipredict-inventory-module]: beginning deploy...
+[info] i  hosting[ipredict-inventory-module]: found 23 files in build
+[debug] [2019-12-07T14:44:44.353Z] [hosting] hash cache [YnVpbGQ] stored for 23 files
+[debug] [2019-12-07T14:44:44.379Z] [hosting][hash queue][FINAL]
+[debug] [2019-12-07T14:44:44.380Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ipredict-inventory-module/versions/5957c645393310c2:populateFiles  
+ <request body omitted>
+[info] i  hosting: adding files to version [0/23] (0%)
+[debug] [2019-12-07T14:44:46.684Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T14:44:46.725Z] [hosting][populate queue][FINAL]
+[debug] [2019-12-07T14:44:46.794Z] [hosting] uploads queued: 0
+[debug] [2019-12-07T14:44:46.801Z] [hosting][upload queue][FINAL]
+[info] +  hosting[ipredict-inventory-module]: file upload complete
+[debug] [2019-12-07T14:44:46.805Z] [hosting] deploy completed after 2529ms
+[debug] [2019-12-07T14:44:46.926Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "ipredict-inventory-module"
+    },
+    "site": "ipredict-inventory-module",
+    "version": "sites/ipredict-inventory-module/versions/5957c645393310c2"
+  }
+]
+[info] i  hosting[ipredict-inventory-module]: finalizing version...
+[debug] [2019-12-07T14:44:46.940Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/ipredict-inventory-module/versions/5957c645393310c2?updateMask=status  
+
+[debug] [2019-12-07T14:44:48.602Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T14:44:48.637Z] [hosting] finalized version for ipredict-inventory-module:
+[info] +  hosting[ipredict-inventory-module]: version finalized
+[info] i  hosting[ipredict-inventory-module]: releasing new version...
+[debug] [2019-12-07T14:44:48.736Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ipredict-inventory-module/releases?version_name=sites/ipredict-inventory-module/versions/5957c645393310c2  
+
+[debug] [2019-12-07T14:44:50.371Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T14:44:50.443Z] [hosting] release:
+[info] +  hosting[ipredict-inventory-module]: release complete
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/ipredict-inventory-module/overview
+[info] Hosting URL: https://ipredict-inventory-module.firebaseapp.com
+[debug] [2019-12-07T14:52:28.372Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T14:52:28.376Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Arvinth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting:target-name
+[debug] [2019-12-07T14:52:28.376Z] CLI Version:   7.9.0
+[debug] [2019-12-07T14:52:28.376Z] Platform:      win32
+[debug] [2019-12-07T14:52:28.376Z] Node Version:  v10.16.3
+[debug] [2019-12-07T14:52:28.377Z] Time:          Sat Dec 07 2019 20:22:28 GMT+0530 (India Standard Time)
+[debug] [2019-12-07T14:52:28.377Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T14:52:28.377Z] 
+[debug] [2019-12-07T14:52:28.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-07T14:52:28.393Z] > authorizing via signed-in user
+[debug] [2019-12-07T14:52:28.393Z] [iam] checking project ipredict-inventory-module for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-12-07T14:52:28.396Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ipredict-inventory-module:testIamPermissions  
+
+[debug] [2019-12-07T14:52:29.903Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T14:52:29.911Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ipredict-inventory-module  
+ 
+[debug] [2019-12-07T14:52:30.219Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ipredict-inventory-module'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/ipredict-inventory-module/overview
+[debug] [2019-12-07T14:52:30.399Z] TypeError: Cannot read property 'deploys' of undefined
+    at C:\Users\Arvinth\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:84:36
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: An unexpected error has occurred.
