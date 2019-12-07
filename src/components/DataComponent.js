@@ -12,12 +12,10 @@ const DataComponent = ({ data, loading, totalPosts }) => {
         <div >
                 <div className="component_wrapper">
                 <div className="component_header">
-                    <h3 className="id">Course Unavailable</h3>
+                    <h3 className="id">NA</h3><h3>Course Unavailable</h3>
                 </div>
                 <div>
                     <h5>Please enter valid credential in input text box</h5>
-                    <p>or</p>
-                    <h5>Try after refreshing the page manually</h5>
                 </div>
                 </div>
   
