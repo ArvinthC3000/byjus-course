@@ -2,72 +2,81 @@ import React, { useState, useEffect } from 'react';
 import DataComponent from './DataComponent';
 import Pagination from './Pagination';
 import Header from './Header';
-import axios from 'axios';
 
 const Wrapper = () => {
     const [data, setData] = useState([])
+    const [processData, setProcessData] = useState(data)
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPerPage] = useState(50);
-    const [searchkey, setSearchkey] = useState("")
-    let length = data.length;
+    let length = processData.length;
+    
 
 
     // Fetch data
     useEffect(()=>{
         const fetchObject = async () => {
             setLoading(true)
-            const response = await axios.get('https://nut-case.s3.amazonaws.com/coursessc.json')
-            
-            setData(response.data)
+            await fetch('https://nut-case.s3.amazonaws.com/coursessc.json')
+            .then(res => res.json())
+            .then(res => {
+                setData(res)
+                setProcessData(res)
+            })
+            .then(()=>{
+            })
             setLoading(false)
         }
-        
         fetchObject();
     }, [])
 
     // Pagination
     const indexOfLastData = currentPage * dataPerPage;
     const indexOfFirstData = indexOfLastData - dataPerPage;
-    const currentData = data.slice(indexOfFirstData, indexOfLastData);
+    const currentData = (processData).slice(indexOfFirstData, indexOfLastData);
+    
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
     
 
     // Handlers
     let searchFilter = async (e) => {
-        const temp = e.target.value
-        const lotemp = temp.toLowerCase()
-        setSearchkey(lotemp)
-    }
-    let submitHandler = (e) => {
-        e.preventDefault()
-        let sortedArray = []
-        data.forEach(datum => {
-            if(datum.Provider.toLowerCase() === searchkey || datum["Child Subject"].toLowerCase() === searchkey || datum["Next Session Date"] === searchkey  ) {
-                sortedArray.push(datum)
+        setLoading(true)
+        const temp = e.target.value 
+        const regex = new RegExp(temp, "i")
+        let dataArray = []
+        data.map(datum => {
+            if(regex.test(datum.Provider) ||
+            regex.test(datum["Child Subject"]) ||
+            regex.test(datum["Next Session Date"])||
+            temp===""){
+                dataArray.push(datum)
             }
+            return datum
         })
-        setData(sortedArray)
+        setProcessData(dataArray)
+        setLoading(false)
     }
 
 
     return (
-        <div className="container_wrapper">
+        <div className="container_wrapper" >
             <Header 
+               key = {currentData['Course Id']}
                length = {length}
                searchFilter={searchFilter}
-               submitHandler={submitHandler}
                loading={loading}
             />
             <DataComponent 
+                key = {currentData['Course Id']}
                 data={currentData} 
                 loading={loading} 
-                totalPosts={data.length}
+                totalPosts={currentData.length}
             />
             <Pagination
+                key = {currentData['Course Id']}
                 postsPerPage={dataPerPage}
-                totalPosts={data.length}
+                totalPosts={processData.length}
                 paginate={paginate}
                 loading={loading}
             />
