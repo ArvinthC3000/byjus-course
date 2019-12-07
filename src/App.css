@@ -135,7 +135,7 @@ form{
   border: 1px solid #9F9F9F;
   border-radius:2rem ;
   margin: 1em;
-  min-width: 50vw;
+  width: 60vw;
   min-height: 15vh;
 }
 
